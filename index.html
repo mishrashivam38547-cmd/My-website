@@ -7,42 +7,57 @@
     background-color: black;
     color: white;
     margin: 0;
-    highet: 100vh;
+    height: 100vh;
     display: flex;
-    justify-content:center;
-    align-times:center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
-    
   }
-  select { padding: 20px;
-          colour: green;
-          font-size:10px;
-          cursor:pointer;
-         }
-  section { padding:30px;
-           colour: white;
-           fort-size:15px;
-           cursor:pointer;
-          }
-  button { padding: 10px 20px:
-           colour: blue;
-           reddes: 5px;
-           font-size: 15px;
-           cursor: pointer;
+
+  select {
+    padding: 10px;
+    color: green;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  section {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 20px;
+    color: blue;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
   }
 </style>
 </head>
 <body>
+
   <select>
-  <option> Hindi </option>
-    <option> English </option>
-    <option> Japanese </option>
-    <option> Russian </option>
+    <option>Hindi</option>
+    <option>English</option>
+    <option>Japanese</option>
+    <option>Russian</option>
   </select>
+
   <section>
-    <type> "name" </type>
-    <type> "nickname" </type>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Nickname">
   </section>
-  <button> Submit </button>
+
+  <button>Submit</button>
+
 </body>
 </html>

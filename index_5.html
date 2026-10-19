@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101014">
+  <title>workflow — Creative Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">w</span> workflow</a>
+  <nav><a href="#explore" data-i18n="explore">Explore</a><a href="#how" data-i18n="how">How it works</a></nav>
+  <div class="top-actions"><button id="langBtn" class="btn ghost">हिंदी</button><button id="authBtn" class="btn primary" data-i18n="signIn">Sign in</button></div>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy"><div class="eyebrow"><span class="dot"></span><span data-i18n="eyebrow">A home for creative work</span></div>
+      <h1 data-i18n="heroTitle">Good work deserves<br><em>to be discovered.</em></h1>
+      <p data-i18n="heroText">Meet independent artists, designers, architects and developers. Explore their work, compare services and contact them directly.</p>
+      <div class="hero-actions"><a class="btn primary large" href="#explore" data-i18n="exploreWork">Explore creators ↗</a><button class="btn secondary large" id="joinBtn" data-i18n="joinCreator">Create your profile</button></div>
+      <div class="hero-stats"><div><b>01</b><span data-i18n="statOne">Show your work</span></div><div><b>02</b><span data-i18n="statTwo">Set your price</span></div><div><b>03</b><span data-i18n="statThree">Connect directly</span></div></div>
+    </div>
+    <div class="hero-art"><div class="art-glow"></div><div class="art-card card-back"><span>01 / BRAND IDENTITY</span><div class="abstract-shape"></div></div><div class="art-card card-front"><span>WORKFLOW / SELECTED</span><div class="art-grid"><div class="tile tile-a">FORM<br>FOLLOWS<br>FEELING</div><div class="tile tile-b">◒</div><div class="tile tile-c">W—26</div><div class="tile tile-d">✳</div></div><div class="art-foot"><b>Make something matter.</b><span>Creative portfolio / 2026</span></div></div><div class="floating-note">✦ Independent talent, one place</div></div>
+  </section>
+  <section class="category-strip" aria-label="Categories"><button class="chip active" data-category="All">✳ <span data-i18n="all">All work</span></button><button class="chip" data-category="Artist">◉ <span data-i18n="artists">Artists</span></button><button class="chip" data-category="Graphic Designer">▧ <span data-i18n="designers">Graphic designers</span></button><button class="chip" data-category="Architect">⌂ <span data-i18n="architects">Architects</span></button><button class="chip" data-category="Developer">⌘ <span data-i18n="developers">Developers</span></button></section>
+  <section id="explore" class="section">
+    <div class="section-heading"><div><div class="eyebrow">THE DIRECTORY</div><h2 data-i18n="discoverTitle">Discover creative people.</h2><p data-i18n="discoverText">Real portfolios. Clear pricing. Direct conversations.</p></div><div class="search-wrap"><span>⌕</span><input id="searchInput" placeholder="Search people, skills, services…" data-i18n-placeholder="searchPlaceholder"></div></div>
+    <div id="status" class="status">Connect Firebase to load live creator profiles. Demo cards are shown below.</div>
+    <div id="creatorGrid" class="creator-grid"></div>
+  </section>
+  <section id="how" class="how-section"><div><div class="eyebrow">SIMPLE BY DESIGN</div><h2 data-i18n="howTitle">From portfolio to opportunity.</h2></div><div class="steps"><article><span>01</span><h3 data-i18n="step1Title">Build your profile</h3><p data-i18n="step1Text">Introduce yourself, list your skills and share your best work.</p></article><article><span>02</span><h3 data-i18n="step2Title">Publish your offers</h3><p data-i18n="step2Text">Upload images, videos, digital products or services and set your fee.</p></article><article><span>03</span><h3 data-i18n="step3Title">Connect directly</h3><p data-i18n="step3Text">Clients contact you directly. You agree on delivery and payment together.</p></article></div></section>
+  <section class="cta"><div><div class="eyebrow">YOUR NEXT CHAPTER</div><h2 data-i18n="ctaTitle">Your work should be out there.</h2><p data-i18n="ctaText">Make a home for your ideas, projects and services.</p></div><button class="btn dark large" id="ctaJoin" data-i18n="createFree">Create a free profile ↗</button></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">w</span> workflow</a><span>Independent work. Direct connections.</span><span>© 2026 workflow</span></footer>
+
+<div id="authModal" class="modal hidden"><div class="modal-panel"><button class="close" data-close="authModal">×</button><div class="eyebrow">WORKFLOW ACCOUNT</div><h2 id="authTitle">Welcome back</h2><p id="authSub">Sign in or create your creator account.</p><form id="authForm"><label>Email<input type="email" id="authEmail" required autocomplete="email"></label><label>Password<input type="password" id="authPassword" minlength="6" required autocomplete="current-password"></label><button class="btn primary full" type="submit" id="authSubmit">Sign in</button></form><button id="toggleAuth" class="text-button">New here? Create an account</button><div id="authMessage" class="form-message"></div></div></div>
+<div id="profileModal" class="modal hidden"><div class="modal-panel wide"><button class="close" data-close="profileModal">×</button><div class="eyebrow">YOUR SPACE</div><h2>Create your creator profile</h2><p>Use a public name and only share contact details you want clients to see.</p>
+<form id="profileForm" class="form-grid"><label>Display name / नाम<input id="pName" required maxlength="70"></label><label>Profession / पेशा<select id="pRole"><option>Artist</option><option>Graphic Designer</option><option>Architect</option><option>Developer</option></select></label><label>Skills / कौशल<input id="pSkills" placeholder="Branding, illustration, React…"></label><label>City / शहर<input id="pCity" placeholder="Jaunpur, India"></label><label>WhatsApp number / WhatsApp<input id="pWhatsApp" placeholder="91XXXXXXXXXX"></label><label>Portfolio or website URL<input id="pWebsite" type="url" placeholder="https://…"></label><label class="span2">About you / परिचय<textarea id="pBio" rows="3" maxlength="500"></textarea></label><button class="btn primary" type="submit">Save profile</button><button class="btn secondary" type="button" id="signOutBtn">Sign out</button></form><div id="profileMessage" class="form-message"></div>
+<div class="upload-box"><h3>Add a project, product or service</h3><form id="projectForm" class="form-grid"><label>Title<input id="xTitle" required maxlength="100"></label><label>Type<select id="xType"><option value="service">Service</option><option value="design">Design / artwork</option><option value="video">Video</option><option value="digital">Digital product</option><option value="project">Project / case study</option></select></label><label>Price (₹)<input id="xPrice" type="number" min="0" step="1" placeholder="Starting price"></label><label>Preview image/video file<input id="xFile" type="file" accept="image/*,video/mp4,video/webm"></label><label class="span2">Description<textarea id="xDescription" rows="2" maxlength="700"></textarea></label><label class="span2">External product/demo URL (optional)<input id="xLink" type="url" placeholder="https://…"></label><button class="btn primary" type="submit">Publish item</button></form><p class="small-note">Demo works without Firebase only in this browser. Live uploads need Firebase configuration and Storage rules.</p><div id="projectMessage" class="form-message"></div></div>
+<div id="myProjects" class="my-projects"></div></div></div>
+<div id="detailModal" class="modal hidden"><div class="modal-panel"><button class="close" data-close="detailModal">×</button><div id="detailContent"></div></div></div>
+<div id="adminModal" class="modal hidden"><div class="modal-panel wide"><button class="close" data-close="adminModal">×</button><div class="eyebrow">ADMIN</div><h2>Workflow moderation</h2><p>Admin access is controlled by Firestore rules, not by hiding this screen.</p><div id="adminContent"></div></div></div>
+<div id="toast" class="toast"></div>
+<script type="module" src="app.js"></script>
+</body></html>
